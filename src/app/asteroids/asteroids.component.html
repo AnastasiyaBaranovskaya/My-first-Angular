@@ -1,0 +1,14 @@
+<h2>Asteroids in the order of their discovery</h2>
+<ul class="asteroids">
+  <li *ngFor="let asteroid of asteroids"
+  [class.selected]="asteroid === selectedAsteroid"
+  (click)="onSelect(asteroid)">
+    <span class="badge">{{asteroid.id}}</span> {{asteroid.name}}
+  </li>
+</ul>
+<div *ngIf="selectedAsteroid">
+  <h2>{{selectedAsteroid.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedAsteroid.id}}</div>
+
+
+</div>

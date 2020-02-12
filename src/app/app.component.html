@@ -1,2 +1,6 @@
 <h1>{{ title }}</h1>
 <app-asteroids></app-asteroids>
+<div *ngIf="response">
+  <p>Name {{response.name}}</p>
+  <p>Name {{response.id}}</p>
+</div>

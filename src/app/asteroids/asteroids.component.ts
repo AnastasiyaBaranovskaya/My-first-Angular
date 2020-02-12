@@ -8,11 +8,14 @@ import { ASTEROIDS } from '../mock-asteroids';
   styleUrls: ['./asteroids.component.scss']
 })
 export class AsteroidsComponent implements OnInit {
+
   asteroids = ASTEROIDS;
+
   asteroid: Asteroid = {
     id: 1,
     name: 'Ceres'
   }
+
   selectedAsteroid: Asteroid;
 
   constructor() { }

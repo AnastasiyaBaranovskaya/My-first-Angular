@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { switchMap } from 'rxjs/operators';
 import { AppComponent } from '../app.component';
-import { AsteroidsComponent } from '../asteroids.component';
+import { AsteroidsComponent } from '../asteroids/asteroids.component';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 
@@ -16,5 +16,7 @@ export class DetailsComponent implements OnInit {
   }
   constructor (){
   }
-
+  // onSelect(asteroid: Asteroid): void {
+  //   this.selectedAsteroid = asteroid;
+  // }
 }

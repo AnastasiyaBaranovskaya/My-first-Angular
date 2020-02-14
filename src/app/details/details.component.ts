@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component} from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { NewServiceService } from '../new-service.service';
-
 
 
 @Component({
@@ -10,25 +8,17 @@ import { NewServiceService } from '../new-service.service';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent  {
 
-  ngOnInit(): void {
-  }
-  title = 'List of Asteroids';
   response: any;
   id: string;
 
-  constructor (
-    private http: HttpClient,
-    private route: ActivatedRoute
-    ){
+  constructor (private http: HttpClient, private route: ActivatedRoute){
       this.id = this.route.snapshot.params['id'];
-      this.route.params.subscribe(params => {this.id = params['id']});
     }
-    fullUrl = 'https://api.nasa.gov/neo/rest/v1/neo/'+ this.id + '?api_key=D0Bmcl1rnb6rGbEt0eb7BcnbNcXHBNFgcon6Fu8F';
-
   search (){
-   this.http.get(this.fullUrl)
+    const fullUrl = `https://api.nasa.gov/neo/rest/v1/neo/${this.id}?api_key=D0Bmcl1rnb6rGbEt0eb7BcnbNcXHBNFgcon6Fu8F`;
+   this.http.get(fullUrl)
     .subscribe((response)=>{
       this.response = response;
     })

@@ -1,6 +1,6 @@
-import { Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NewServiceService } from '../new-service.service';
 import { ActivatedRoute} from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -8,19 +8,20 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-export class DetailsComponent  {
+export class DetailsComponent implements OnInit {
 
-  response: any;
   id: string;
 
-  constructor (private http: HttpClient, private route: ActivatedRoute){
+  public response;
+  constructor (
+    private route: ActivatedRoute,
+    private newServiceService: NewServiceService
+    ){
       this.id = this.route.snapshot.params['id'];
-    }
-  search (){
-    const fullUrl = `https://api.nasa.gov/neo/rest/v1/neo/${this.id}?api_key=D0Bmcl1rnb6rGbEt0eb7BcnbNcXHBNFgcon6Fu8F`;
-   this.http.get(fullUrl)
-    .subscribe((response)=>{
-      this.response = response;
-    })
+    };
+
+  ngOnInit(){
+    this.newServiceService.search(this.id)
+    .subscribe(data => this.response = data);
   }
 }

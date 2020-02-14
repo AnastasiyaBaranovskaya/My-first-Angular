@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { NewServiceService } from '../new-service.service';
 
 @Component({
@@ -8,18 +7,16 @@ import { NewServiceService } from '../new-service.service';
   styleUrls: ['./asteroids.component.scss']
 })
 
-export class AsteroidsComponent  {
+export class AsteroidsComponent  implements OnInit {
   title = 'List of Asteroids';
-  response: any;
-  constructor (private http: HttpClient){
+  public response;
+  constructor (private newServiceService: NewServiceService){};
+
+  ngOnInit(){
+    this.newServiceService.getList()
+    .subscribe(data => this.response = data);
   }
 
-  search (){
-   this.http.get('https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=D0Bmcl1rnb6rGbEt0eb7BcnbNcXHBNFgcon6Fu8F')
-    .subscribe((response)=>{
-      this.response = response;
-    })
-  }
 }
 
 

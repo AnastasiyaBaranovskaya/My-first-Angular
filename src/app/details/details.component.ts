@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs/operators';
+import { AppComponent } from '../app.component';
+import { AsteroidsComponent } from '../asteroids.component';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
 
 @Component({
   selector: 'app-details',
@@ -7,9 +12,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
-
   ngOnInit(): void {
+  }
+  constructor (){
   }
 
 }

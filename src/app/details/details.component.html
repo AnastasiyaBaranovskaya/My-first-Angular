@@ -1,7 +1,7 @@
 <div>
   <h2>Details about Asteroid</h2>
 </div>
-<!-- <div>
-  <h2>{{selectedAsteroid.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedAsteroid.id}}</div>
-</div> -->
+<button (click)="search()">Search</button>
+<p>Name:{{response.name}}</p>
+<p>ID: {{response.id}} </p>
+<p>Estimated Diameter: {{response.estimated_diameter.kilometers.estimated_diameter_min}} </p>

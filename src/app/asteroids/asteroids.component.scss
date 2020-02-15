@@ -27,7 +27,8 @@ a:hover{
 }
 ul{
   text-align: start;
-  margin: 0;
+  margin: 20px;
+  padding: 0;
 }
 button{
   max-width: 30%;
@@ -40,20 +41,11 @@ li {
   background-color: #0f3655;
   border-radius: 10px;
 }
-span{
-
-}
 .item-list{
   display: flex;
   width: 100%;
   justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-$breakpoint-tablet: 768px;
-  @media (max-width: $breakpoint-tablet){
-    .item-list{
-      flex-direction: column;
-    }
-    ul{
-      padding: 0;
-    }
-}
+

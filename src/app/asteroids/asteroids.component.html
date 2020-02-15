@@ -2,8 +2,9 @@
 <h1>{{ title }}</h1>
   <div class="item-list">
       <ul *ngFor="let asteroids of response.near_earth_objects | keyvalue">
+        <p>{{asteroids.key}}</p>
         <li *ngFor="let asteroid of asteroids.value">
-            <a routerLink='/details/{{asteroid.id}}'>Name: <span>{{asteroid.name}}</span> id:{{asteroid.id}} </a>
+            <a routerLink='/details/{{asteroid.id}}'>Name: <span>{{asteroid.name | uppercase}}</span> id:{{asteroid.id}} </a>
         </li>
       </ul>
   </div>

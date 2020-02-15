@@ -1,3 +1,6 @@
+body{
+  background-color: #4e7a9d
+}
 .container{
     margin:0 auto;
     display: flex;
@@ -10,10 +13,17 @@ a {
     margin: 0 auto;
     padding: 10px;
     display: block;
-    color: #000
+    color: #fff;
 }
-a:visited{
-  color: #000;
+p{
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #87a1b6;
+}
+a:hover{
+  background-color: #2c71a9;
+  border-radius: 10px;
 }
 ul{
   text-align: start;
@@ -24,16 +34,26 @@ button{
 }
 li {
   list-style: none;
-  margin-right: 10px;
+  border: 1px solid;
+  padding: 2px;
+  margin: 2px;
+  background-color: #0f3655;
+  border-radius: 10px;
 }
 span{
-    color: white;
-    border-radius: 10px;
-    padding: 2px;
-    background-color: #6565e5;
+
 }
 .item-list{
   display: flex;
   width: 100%;
   justify-content: center;
+}
+$breakpoint-tablet: 768px;
+  @media (max-width: $breakpoint-tablet){
+    .item-list{
+      flex-direction: column;
+    }
+    ul{
+      padding: 0;
+    }
 }

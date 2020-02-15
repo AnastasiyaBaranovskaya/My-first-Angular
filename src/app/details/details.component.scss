@@ -1,1 +1,28 @@
 
+.container{
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid #e7e9e9;
+  border-radius: 20px;
+  width: 320px;
+  height: 360px;
+  text-align: start;
+  background: linear-gradient(45deg, #475f72,#4e7a9d,#7f8d99, transparent);
+}
+h2{
+  margin-bottom: 10%;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e7e9e9;
+}
+p{
+  color:#fff;
+}

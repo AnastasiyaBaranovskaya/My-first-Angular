@@ -15,6 +15,7 @@ export class AsteroidsComponent  implements OnInit {
   ngOnInit(){
     this.newServiceService.getList()
     .subscribe(data => this.response = data);
+
   }
 
 }

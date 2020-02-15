@@ -1,21 +1,23 @@
 <div class="container">
-<h1>{{ title }}</h1>
+  <h1>{{ title }}</h1>
   <div class="item-list">
-      <ul *ngFor="let asteroids of response.near_earth_objects | keyvalue">
-        <p>{{asteroids.key}}</p>
-        <li *ngFor="let asteroid of asteroids.value">
-            <a routerLink='/details/{{asteroid.id}}'>Name: <span>{{asteroid.name | uppercase}}</span> id:{{asteroid.id}} </a>
-        </li>
-      </ul>
+    <ul *ngFor="let asteroids of response.near_earth_objects | keyvalue">
+      <p>{{asteroids.key}}</p>
+      <li *ngFor="let asteroid of asteroids.value">
+        <a routerLink='/details/{{asteroid.id}}'>Name: <span>{{asteroid.name | uppercase}}</span> id:{{asteroid.id}}
+        </a>
+      </li>
+    </ul>
+  </div>
+
+<div>
+  <label>Search:<input [ngModel]="searchText" placeholder="Search by Name">
+  </label>
+  <div *ngFor="let asteroids of response.near_earth_objects | keyvalue">
+    <div *ngFor="let asteroid of asteroids.value | filter:searchText">
+      <p>{{asteroid.name}}</p>
+      <p>{{asteroid.id}}</p>
+    </div>
   </div>
 </div>
-  <!-- <div ng-init="{{asteroids.value}}"></div>
-  <label>Search:<input ng-model="searchText"></label>
-  <table id="searchTextResults">
-    <tr><th>Name</th><th>Phone</th></tr>
-    <tr ng-repeat="asteroid in asteroids.value | filter:searchText">
-      <td>{{asteroid.name}}</td>
-      <td>{{asteroid.id}}</td>
-    </tr>
-  </table> -->
-  <!-- [class.selected]="asteroid === selectedAsteroid" (click)="onSelect(asteroid) -->
+</div>

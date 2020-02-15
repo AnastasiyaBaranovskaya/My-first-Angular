@@ -9,6 +9,7 @@ import { DetailsComponent } from './details/details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NewServiceService } from './new-service.service';
 import { AsteroidsComponent } from './asteroids/asteroids.component';
+import { AsteroidsFilterPipe } from './asteroids/asteroids.filter.pipe';
 
 const appRoutes: Routes = [
   {path: '', component: AsteroidsComponent },
@@ -21,7 +22,8 @@ const appRoutes: Routes = [
     AppComponent,
     DetailsComponent,
     NotFoundComponent,
-    AsteroidsComponent
+    AsteroidsComponent,
+    AsteroidsFilterPipe
   ],
   imports: [
     BrowserModule,

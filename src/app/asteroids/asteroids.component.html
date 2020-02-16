@@ -1,6 +1,6 @@
 <div class="container">
   <h1>{{ title }}</h1>
-  <div class="filter"><button type="submit">Search:</button><input [(ngModel)]="searchText" placeholder="Search by Name"></div>
+  <div class="filter">Search:<input [(ngModel)]="searchText" placeholder="Search by Name"></div>
   <div class="item-list">
     <ul *ngFor="let asteroids of response.near_earth_objects | keyvalue">
       <p>{{asteroids.key}}</p>

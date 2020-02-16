@@ -1,12 +1,12 @@
-
-.container{
+.container {
   display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
-.details{
+
+.details {
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -15,14 +15,16 @@
   width: 50vw;
   height: 50vh;
   text-align: start;
-  background: linear-gradient(45deg, #475f72,#4e7a9d,#7f8d99, transparent);
+  background: linear-gradient(45deg, #475f72, #4e7a9d, #7f8d99, transparent);
 }
-h2{
+
+h2 {
   margin-bottom: 10%;
   font-size: 2rem;
   font-weight: 700;
   color: #e7e9e9;
 }
-p{
-  color:#fff;
+
+p {
+  color: #fff;
 }

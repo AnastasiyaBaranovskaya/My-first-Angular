@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NewServiceService } from '../new-service.service';
+import { NasaApiService } from '../nasa-api.service';
 
 @Component({
   selector: 'app-asteroids',
@@ -7,15 +7,15 @@ import { NewServiceService } from '../new-service.service';
   styleUrls: ['./asteroids.component.scss']
 })
 
-export class AsteroidsComponent  implements OnInit {
+export class AsteroidsComponent implements OnInit {
   title = 'List of Asteroids';
+  searchText: string;
   public response;
-  constructor (private newServiceService: NewServiceService){};
+  constructor(private nasaApiService: NasaApiService) {}
 
-  ngOnInit(){
-    this.newServiceService.getList()
-    .subscribe(data => this.response = data);
-
+  ngOnInit() {
+    this.nasaApiService.getList()
+      .subscribe(data => this.response = data);
   }
 
 }

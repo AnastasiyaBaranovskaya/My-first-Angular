@@ -3,10 +3,11 @@ import { PipeTransform, Pipe } from '@angular/core';
   name: 'filter'
 })
 export class AsteroidsFilterPipe implements PipeTransform{
-  transform(asteroids : Asteroid[], searchTerm: string): Asteroid[]{
+
+  transform(asteroids, searchTerm){
     if (!asteroids || !searchTerm){
       return asteroids;
     }
-    return asteroids.filter(asteroid => asteroid.name.toLowerCase().indexOf(searchTerm.toLocaleLowerCase()) !== -1);
+    return asteroids.filter(asteroid => asteroid.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1);
   }
 }

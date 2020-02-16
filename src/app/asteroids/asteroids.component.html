@@ -1,23 +1,13 @@
 <div class="container">
   <h1>{{ title }}</h1>
+  <div class="filter"><button type="submit">Search:</button><input [(ngModel)]="searchText" placeholder="Search by Name"></div>
   <div class="item-list">
     <ul *ngFor="let asteroids of response.near_earth_objects | keyvalue">
       <p>{{asteroids.key}}</p>
-      <li *ngFor="let asteroid of asteroids.value">
+      <li *ngFor="let asteroid of asteroids.value | filter:searchText">
         <a routerLink='/details/{{asteroid.id}}'>Name: <span>{{asteroid.name | uppercase}}</span> id:{{asteroid.id}}
         </a>
       </li>
     </ul>
   </div>
-
-<div>
-  <label>Search:<input [ngModel]="searchText" placeholder="Search by Name">
-  </label>
-  <div *ngFor="let asteroids of response.near_earth_objects | keyvalue">
-    <div *ngFor="let asteroid of asteroids.value | filter:searchText">
-      <p>{{asteroid.name}}</p>
-      <p>{{asteroid.id}}</p>
-    </div>
-  </div>
-</div>
 </div>

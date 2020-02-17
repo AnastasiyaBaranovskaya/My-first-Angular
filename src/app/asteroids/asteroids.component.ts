@@ -20,4 +20,3 @@ export class AsteroidsComponent implements OnInit {
 
 }
 
-

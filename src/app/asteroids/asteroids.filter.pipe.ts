@@ -4,7 +4,7 @@ import { PipeTransform, Pipe } from '@angular/core';
 })
 export class AsteroidsFilterPipe implements PipeTransform {
 
-  transform(asteroids, searchTerm) {
+  transform(asteroids: [{name: ''}], searchTerm: string) {
     if (!asteroids || !searchTerm) {
       return asteroids;
     }
